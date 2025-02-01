@@ -1,5 +1,9 @@
 {
-  "dialog.geometry_generation_tools.circle": "[GGT] Circle",
+  "dialog.geometry_generation_tools.circle": "[GGT] Circle Or Ring",
   "dialog.geometry_generation_tools.circle.radius": "Radius",
-  "dialog.geometry_generation_tools.circle.edge": "Edge"
+  "dialog.geometry_generation_tools.circle.radius.desc": "Circumcircle radius",
+  "dialog.geometry_generation_tools.circle.edge": "Edge",
+  "dialog.geometry_generation_tools.circle.edge.desc": "Number of polygon sides",
+  "dialog.geometry_generation_tools.circle.is_ring": "Ring",
+  "dialog.geometry_generation_tools.circle.is_ring.desc": "Create the cylinder or ring?"
 }

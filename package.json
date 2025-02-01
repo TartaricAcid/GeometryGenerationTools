@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "geometry-generation-tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "min_blockbench_version": "4.0.0",
   "author": "tartaric_acid",
   "title": "Geometry Generation Tools Plugins",
@@ -27,7 +27,7 @@
     "@types/node": "^22.5.4",
     "blockbench-types": "^4.6.1",
     "rollup": "^4.21.2",
-    "rollup-plugin-vue": "6.0.0",
+    "rollup-plugin-vue": "5.0.0",
     "vue-template-compiler": "latest"
   },
   "dependencies": {

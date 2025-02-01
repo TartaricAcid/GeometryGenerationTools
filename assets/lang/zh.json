@@ -1,5 +1,9 @@
 {
-  "dialog.geometry_generation_tools.circle": "[GGT] 圆形",
+  "dialog.geometry_generation_tools.circle": "[GGT] 圆柱与圆环",
   "dialog.geometry_generation_tools.circle.radius": "半径",
-  "dialog.geometry_generation_tools.circle.edge": "边数"
+  "dialog.geometry_generation_tools.circle.radius.desc": "外接圆半径",
+  "dialog.geometry_generation_tools.circle.edge": "边数",
+  "dialog.geometry_generation_tools.circle.edge.desc": "多边形的边数",
+  "dialog.geometry_generation_tools.circle.is_ring": "圆环",
+  "dialog.geometry_generation_tools.circle.is_ring.desc": "创建圆环还是圆柱？"
 }
