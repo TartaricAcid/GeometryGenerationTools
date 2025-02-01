@@ -1,0 +1,5 @@
+geometry-generation-tools.js
+node_modules
+package-lock.json
+test
+.idea
