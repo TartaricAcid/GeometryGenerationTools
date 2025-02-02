@@ -1,4 +1,4 @@
-export function addCustomCube(group, start, size, inflate) {
+export function addCustomCube(group, start, size, rotation = [0, 0, 0]) {
     let baseCube = new Cube({
         autouv: (settings.autouv.value ? 1 : 0)
     }).init();
@@ -9,8 +9,8 @@ export function addCustomCube(group, start, size, inflate) {
             baseCube.extend({
                 from: [start[0], start[1], start[2]],
                 to: [start[0] + size[0], start[1] + size[1], start[2] + size[2]],
-                inflate: inflate ? inflate : 0,
-                origin: originPos.slice()
+                origin: originPos.slice(),
+                rotation: [rotation[0], rotation[1], rotation[2]]
             });
         }
     }

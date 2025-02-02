@@ -1,5 +1,10 @@
 <script>
-import {generateCylinder, generateRing} from "../geometry/circle.js";
+import {
+    generateCylinder,
+    generateCylinderLengthMode,
+    generateRing,
+    generateRingLengthMode
+} from "../geometry/circle.js";
 
 export default {
     props: {
@@ -15,8 +20,10 @@ export default {
     data() {
         return {
             isRing: true,
-            radius: 6,
-            edge: 6
+            diameter: 12,
+            edge: 6,
+            hasGroup: true,
+            edgeLengthMode: true,
         };
     },
     methods: {
@@ -28,9 +35,17 @@ export default {
         },
         confirm: function () {
             if (this.isRing) {
-                generateRing(this.group, this.edge, this.radius);
+                if (this.edgeLengthMode) {
+                    generateRingLengthMode(this.group, this.edge, this.diameter, this.hasGroup);
+                } else {
+                    generateRing(this.group, this.edge, this.diameter / 2, this.hasGroup);
+                }
             } else {
-                generateCylinder(this.group, this.edge, this.radius);
+                if (this.edgeLengthMode) {
+                    generateCylinderLengthMode(this.group, this.edge, this.diameter, this.hasGroup);
+                } else {
+                    generateCylinder(this.group, this.edge, this.diameter / 2, this.hasGroup);
+                }
             }
             this.dialogInput.close();
         }
@@ -52,13 +67,46 @@ export default {
         </div>
 
         <div class="horizontal-item">
+            <div style="width: 82%">
+                <p class="title">{{ tl("dialog.geometry_generation_tools.circle.edge_length_mode") }}</p>
+                <p class="desc">{{ tl("dialog.geometry_generation_tools.circle.edge_length_mode.desc") }}</p>
+            </div>
+
+            <div style="width: 18%; margin: 0 auto;">
+                <input type="checkbox" v-model="edgeLengthMode" style="transform: scale(1.5)">
+            </div>
+        </div>
+
+        <div class="horizontal-item">
+            <div style="width: 82%">
+                <p class="title">{{ tl("dialog.geometry_generation_tools.circle.has_group") }}</p>
+                <p class="desc">{{ tl("dialog.geometry_generation_tools.circle.has_group.desc") }}</p>
+            </div>
+
+            <div style="width: 18%; margin: 0 auto;">
+                <input type="checkbox" v-model="hasGroup" style="transform: scale(1.5)">
+            </div>
+        </div>
+
+        <div class="horizontal-item" v-if="edgeLengthMode">
             <div style="width: 70%">
-                <p class="title">{{ tl("dialog.geometry_generation_tools.circle.radius") }}</p>
-                <p class="desc">{{ tl("dialog.geometry_generation_tools.circle.radius.desc") }}</p>
+                <p class="title">{{ tl("dialog.geometry_generation_tools.circle.edge_length") }}</p>
+                <p class="desc">{{ tl("dialog.geometry_generation_tools.circle.edge_length.desc") }}</p>
             </div>
 
             <div style="width: 30%; margin: 0 auto;">
-                <input class="input" type="number" min="0.01" step="0.01" v-model.number="radius">
+                <input class="input" type="number" min="0.01" step="0.01" v-model.number="diameter">
+            </div>
+        </div>
+
+        <div class="horizontal-item" v-else>
+            <div style="width: 70%">
+                <p class="title">{{ tl("dialog.geometry_generation_tools.circle.diameter") }}</p>
+                <p class="desc">{{ tl("dialog.geometry_generation_tools.circle.diameter.desc") }}</p>
+            </div>
+
+            <div style="width: 30%; margin: 0 auto;">
+                <input class="input" type="number" min="0.01" step="0.01" v-model.number="diameter">
             </div>
         </div>
 

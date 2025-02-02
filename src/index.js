@@ -1,6 +1,7 @@
 import {loadI18n} from "./utils/i18nloader.js";
 import packageInfo from "../package.json";
 import {addCircleDialog} from "./dialog/circle_dialog.js";
+import {addConeDialog} from "./dialog/cone_dialog.js";
 
 BBPlugin.register(packageInfo.name, {
     title: packageInfo.title,
@@ -16,8 +17,10 @@ BBPlugin.register(packageInfo.name, {
         loadI18n();
         Group.prototype.menu.structure.push("_");
         Group.prototype.menu.structure.push(addCircleDialog);
+        Group.prototype.menu.structure.push(addConeDialog);
         Interface.Panels.outliner.menu.structure.push("_");
         Interface.Panels.outliner.menu.structure.push(addCircleDialog);
+        Interface.Panels.outliner.menu.structure.push(addConeDialog);
     },
     onunload() {
     },
