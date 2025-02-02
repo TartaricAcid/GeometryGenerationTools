@@ -11,5 +11,16 @@
   "dialog.geometry_generation_tools.circle.has_group": "添加组",
   "dialog.geometry_generation_tools.circle.has_group.desc": "是否添加组来包裹每个 cube？",
   "dialog.geometry_generation_tools.circle.edge_length_mode": "长度模式",
-  "dialog.geometry_generation_tools.circle.edge_length_mode.desc": "输入参数将决定每个方块的长度，而不是外接圆直径"
+  "dialog.geometry_generation_tools.circle.edge_length_mode.desc": "输入参数将决定每个方块的长度，而不是外接圆直径",
+  "dialog.geometry_generation_tools.cone": "[GGT] 圆台",
+  "dialog.geometry_generation_tools.cone.top_diameter": "顶部直径",
+  "dialog.geometry_generation_tools.cone.top_diameter.desc": "顶部直径",
+  "dialog.geometry_generation_tools.cone.bottom_diameter": "底部直径",
+  "dialog.geometry_generation_tools.cone.bottom_diameter.desc": "底部直径",
+  "dialog.geometry_generation_tools.cone.top_length": "顶部长度",
+  "dialog.geometry_generation_tools.cone.top_length.desc": "顶部长度",
+  "dialog.geometry_generation_tools.cone.bottom_length": "底部长度",
+  "dialog.geometry_generation_tools.cone.bottom_length.desc": "底部长度",
+  "dialog.geometry_generation_tools.cone.length": "圆台母线长度",
+  "dialog.geometry_generation_tools.cone.length.desc": "圆台母线长度"
 }
